@@ -143,26 +143,7 @@ namespace Practika
         }
 
         //Периодически обновляет код и проверяет блокировку
-        public static void StartBackgroundTasks()
-        {
-            Task.Run(async () =>
-            {
-                while (IsConnected)
-                {
-                    await Task.Delay(5000);
-                    if (!IsConnected) break;
-
-                    SendCommand("refresh");
-                    await Task.Delay(1000);
-
-                    if (!IsConnected) break;
-                    SendCommand("check");
-                }
-
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Фоновые запросы остановлены.");
-            });
-        }
+       
 
         static void Main(string[] args)
         {
