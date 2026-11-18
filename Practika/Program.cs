@@ -191,8 +191,6 @@ namespace Practika
                 Console.Read();
                 return;
             }
-
-            // Периодические запросы refresh/check
             StartBackgroundTasks();
 
             // Управление из консоли
